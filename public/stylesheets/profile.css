@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+
+body {
+  height: 100vh;
+  font-family: 'Nunito', sans-serif;
+  letter-spacing: .1px;
+  background: #2E4053;
+  margin: 0;
+  width: 100%;
+}
+
+#card {
+  position: relative;
+  /* height: 35%; */
+  width: 80%;
+  margin: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background: transparent;
+  border-radius: 8px;
+}
+
+#avatar {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-top: 10px;
+  border-radius: 50%;
+}
+
+#info {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#name {
+  font-size: 20px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+}
+
+#activity {
+  color: #999999;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -.5px;
+  margin: 0;
+  padding: 0;
+}
+
+#btn1 {
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+  padding-left: 35px;
+  position: relative;
+  background: #3498DB;
+  margin-top: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#btn1:hover{
+  background: #1f70a7;
+}
+
+#btn2 {
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+  background: #E74C3C;
+  margin: 0;
+  margin-top: 10px;
+  padding: 10px;
+  padding-left: 35px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+#btn2:hover{
+  background: #d73927;
+}
+
+#btn:hover {
+  background: #2A26FF;
+}
+
+h1 {
+  color: #fff!important;
+  padding-left: 5vw!important;
+  position: absolute!important;
+  top: 1.5vh!important;
+  left: 2vw!important;
+  font-size: 2rem!important;
+}
+.fileInput{
+  color: #fff;
+}
+
+.container
+{
+  margin: 0;
+  padding: 14vh 3vw;
+  position: relative;
+  background-color: #34495E;
+  width: 1200px;
+  columns: 4;
+  column-gap: 20px;
+}
+.container .box
+{
+  width: 100%;
+  margin-bottom: 10px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  break-inside: avoid;
+  border-radius: 15px;
+}
+.container .box img
+{
+  max-width: 100%;
+  min-width: 100%;
+  border-radius: 10px;
+}
+h2{
+  font-size: 2rem!important;
+  margin-bottom: 20px!important;
+  font-weight: 700!important;
+  color: white!important;
+}
+.post{
+  position: absolute!important;
+  background: #393E46!important;
+  height: 63vh!important;
+  width: 50vmax!important;
+  color: #000!important;
+  border-radius: 25px 0px 25px 0px!important;
+  padding: 2vh 3vw!important;
+  top: 50%!important;
+  left: 50%!important;
+  transform: translate(-50% ,-50%)!important;
+}
+.post input{
+  display: block!important;
+  border-radius: 8px!important;
+  border: none!important;
+  outline: none!important;
+}
+.fileInput{
+  padding: 3px;
+  border-radius: 15px;
+}
+.text{
+  padding: 5px 12px;
+  margin: 15px 0px;
+}
+textarea{
+  width: 80%;
+  resize: none;
+  height: 22vh;
+  display: block;
+  color: #000;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-bottom: 10px;
+}
+.submit{
+  background: red;
+  width: 100%!important;
+  padding: 6px 0px!important;
+  color: white!important;
+  cursor: pointer;
+  font-weight: bold!important;
+  margin: 10px 0;
+}
+.inviform{
+  height: 100vh!important;
+  width: 100vw!important;
+  background-color: #00000051!important;
+  position: absolute!important;
+  top: 0!important;
+  display: none;
+  z-index: 1;
+  left: 0!important;
+}
+.post svg{
+   position: absolute;
+   top: -8.3vh;
+   color: white;
+   cursor: pointer;
+   right: 0;
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/Logo/Logo1.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title><%= user.fullname %>'s Profile</title>
+</head>
+
+<body>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+
+body {
+  height: 100vh;
+  font-family: 'Nunito', sans-serif;
+  letter-spacing: .1px;
+  background: #2E4053;
+  margin: 0;
+  width: 100%;
+}
+
+.bigbox .box:hover .viewpopup {
+  opacity: 1;
+}
+
+.viewpopup {
+  opacity: 0;
+  height: 100%;
+  transition: opacity 0.4s ease;
+  overflow: hidden;
+}
+
+
+#card {
+  position: relative;
+  /* height: 35%; */
+  width: 80%;
+  margin: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background: transparent;
+  border-radius: 8px;
+}
+
+#avatar {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-top: 10px;
+  border-radius: 50%;
+}
+
+#info {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#name {
+  font-size: 20px;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+}
+
+#activity {
+  color: #999999;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -.5px;
+  margin: 0;
+  padding: 0;
+}
+
+
+h1 {
+  color: #fff!important;
+  padding-left: 5vw!important;
+  position: absolute!important;
+  top: 1.5vh!important;
+  left: 2vw!important;
+  font-size: 2rem!important;
+}
+
+.container
+{
+  margin: 0;
+  padding: 14vh 3vw;
+  position: relative;
+  background-color: #34495E;
+  width: 100%;
+  columns: 4;
+  column-gap: 0px;
+}
+.container .box
+{
+  width: 100%;
+  margin-bottom: 10px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  break-inside: avoid;
+  border-radius: 15px;
+}
+.container .box img
+{
+  max-width: 100%;
+  min-width: 100%;
+  border-radius: 10px;
+}
+
+
+    </style>
+    <%- include('partials/header') %> 
+    <div id="card">
+        <div class="relative">
+        <img id="avatar"
+        src="/images/dp/<%=  user.dp   %>" alt="" />
+        </div>
+        <div id="info">
+            <p id="name">
+                <%= user.fullname %>
+            </p>
+            <p id="activity">@<%= user.username %>
+            </p>
+        </div>     
+    </div>
+    <hr style="color: white;height: 2px;background-color: #fff;margin: 0;">
+    <div class="container bigbox">
+        <h1>Your Posts</h1>
+        <% user.posts.forEach(function(elem){ %>
+            <a href="/postpreview/<%= elem._id %>"><div class="relative rounded-md overflow-hidden px-4 py-3 box">
+                <img src="/images/uploads/<%= elem.postImage %>" alt="image">
+                <div class="caption">
+                    <strong><%= elem.postText %></strong>
+                </div>
+                <div class="discription text-white tracking-tight"><%= elem.discription %></div>
+                <div class="viewpopup absolute w-full h-full top-0 left-0  bg-[#3f3f4696] overflow-hidden">
+                    <p class="absolute top-[40%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-zinc-400 text-2xl bg-transparent">View</p>
+                  </div>
+            </div></a>
+            <% }) %>
+    </div>
+  
+
+</body>
+
+</html>

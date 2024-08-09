@@ -1,0 +1,19 @@
+   <% if(nav === true){ %>
+        <nav style="font-family: 'Nunito', sans-serif!important" class="w-[100%] h-15 px-5 flex flex-row items-center justify-between">
+            <div class="">
+                <a href="/feed"><img class="w-[14vw]" src="/images/Logo/Logo1.png" alt=""></a>
+            </div>
+            <% if(search === true){ %>
+            <div class="search-bar relative top-2 flex flex-row gap-3">
+                <input class="w-[30vw] rounded-md bg-zinc-200 py-2 border-none outline-none px-3" oninput="search()" type="text" id="searchInput" placeholder="Search...">
+                <button onclick="search()" class="search bg-red-600 py-2 border-none outline-none px-3 rounded-md text-white text-semibold hover:bg-red-700">Search</button>
+              </div>
+              <% } %>
+            <div class="flex flex-row justify-between items-center gap-5 text-white font-medium">
+                <a href="/feed" class="text-white cursor-pointer text-decoration">Feed</a>
+                <a href="/profile" class="text-white cursor-pointer no-underline">Profile</a>
+                <button class="py-1 px-3 bg-red-600 font-light text-white rounded-md"><a class="text-white no-underline bg-transparent" href="/logout">Logout</a></button>
+            </div>
+        </nav>
+   <% } %>
+    

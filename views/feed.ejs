@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stylesheets/feed.css">
+  <link rel="icon" type="image/x-icon" href="/images/Logo/Logo1.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+
+  <title>Feed</title>
+</head>
+
+<body>
+  <%- include('partials/header') %> 
+    <div class="bigbox">
+       <% allPosts.reverse().forEach(function(elem,idx){ %>
+        <a href="/postpreview/<%= elem._id %>"><div class="cursor-pointer box relative border-solid overflow-hidden p-3 ">
+          <img
+            src="/images/uploads/<%= elem.postImage %>"
+            alt="image">
+        <div class="caption"><%= elem.postText %></div>
+        <div class="discription text-white tracking-tight"><%= elem.discription %></div>
+        <div class="flex flex-row items-center gap-3 mt-1">
+        <div class="text-white w-12 h-12 rounded-full bg-[url('/images/dp/<%= elem.userid.dp %>')] bg-center bg-cover	"></div>
+        <div class="text-zinc-400 font-bold tracking-tight text-sm">@<%= elem.userid.username %></div>
+        <i class="text-2xl absolute right-[77px] bottom-5 text-zinc-400 ri-chat-3-line"></i>
+        <p class="absolute text-zinc-300 right-16 bottom-6"><%= elem.comments.length %></p>
+        <% if(elem.likes.indexOf(user._id) !== -1){ %>
+          <i class="text-2xl absolute right-7 bottom-5 text-zinc-400 ri-heart-fill"></i>
+      <% } else{ %>
+          <i class="text-2xl absolute right-7 bottom-5 text-zinc-400 ri-heart-line"></i>
+      <% } %>
+      <p class="absolute text-zinc-300 right-4 bottom-6"><%= elem.likes.length %></p>
+
+
+      </div>
+      <div class="viewpopup absolute w-full h-full top-0 left-0  bg-[#3f3f4696] overflow-hidden">
+        <p class="absolute top-[40%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-zinc-400 text-2xl bg-transparent">View</p>
+      </div>
+      </div>
+    </a>
+   
+     <%  }) %>   
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="app.js"></script>
+    <script>
+
+     function search() {
+   var input, filter, bigbox, a, i, txtValue;
+   input = document.getElementById('searchInput');
+    filter = input.value.toUpperCase();
+   bigbox = document.getElementsByClassName('bigbox')[0];
+   a = bigbox.getElementsByTagName('a');
+   for (i = 0; i < a.length; i++) {
+     txtValue = a[i].textContent || a[i].innerText;
+     if (filter) { // If search input is not empty
+       if (txtValue.toUpperCase().indexOf(filter) > -1) {
+         a[i].style.display = "";
+       } else {
+          a[i].style.display = "none";
+       }
+     } else { // If search input is empty
+      a[i].style.display = ""; // Show all elements
+    }
+  }
+}
+    </script>
+  </body>
+
+</html>

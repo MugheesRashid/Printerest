@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+
+*
+{
+  margin: 0;
+  padding: 0;
+	background-color: #262626;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif!important;
+}
+
+
+.bigbox
+{
+  width: 1200px;
+  padding: 13vh 4vw;
+  columns: 4;
+  column-gap: 0px;
+}
+.bigbox .box
+{
+  width: 100%;
+  margin-bottom: 10px;
+  break-inside: avoid;
+  border-radius: 15px;
+}
+.bigbox .box:hover .viewpopup {
+  opacity: 1;
+}
+
+.viewpopup {
+  opacity: 0;
+  height: 100%;
+  transition: opacity 0.4s ease;
+  overflow: hidden;
+}
+
+
+.bigbox .box img
+{
+  max-width: 100%;
+  min-width: 100%;
+  border-radius: 10px;
+}
+
+.caption{
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 2px;
+	font-weight: bolder;
+}
+
+
+@media (max-width: 1427px)
+{
+  .bigbox
+  {
+    columns: 4;
+    width: calc(100% - 40px);
+  }
+}
+@media (max-width: 1200px)
+{
+  .bigbox
+  {
+    columns: 4;
+  }
+}
+
+@media (max-width: 1000px)
+{
+  .bigbox
+  {
+    columns: 3;
+  }
+
+}
+  
+
+@media (max-width: 786px)
+{
+  .bigbox
+  {
+    columns: 2;
+  }
+}
+
+
+@media (max-width: 480px)
+{
+  .bigbox
+  {
+    columns: 1;
+  }
+}

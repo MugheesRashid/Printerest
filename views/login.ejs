@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>login</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="icon" type="image/x-icon" href="/images/Logo/Logo1.png">
+
+  </head>
+  <body>
+    <div style="height: 84%;" class="container">
+      <div class="content">
+        <!--pinterest logo-->
+        <img src="./images/Logo/Logo1.png" alt="pin logo" class="img1" />
+        <p class="header">Make account to see more</p>
+         <form action="/login" method="post">
+        <input type="text" placeholder="UserName" class="detail" name="username"/><br />
+        <input type="password" placeholder="Password" class="detail" name="password"/>
+        <% if(error.length > 0){ %>
+          <p class="error"> <%= error %> !</p>
+        <% } %>
+
+        <button type="submit" class="btn int">Sign up</button>
+        
+        </form>
+        <footer>
+          <p style="color: #fff;">
+            By continuing, you agree to Pinterest's
+            <b>Terms of Service, Privacy policy.</b>
+          </p>
+          <hr />
+          <p><a href="/">Not on Pinterest yet? Sign up</a></p>
+        </footer>
+      </div>
+    </div>
+    <a href="/" class="upbtn">Sign up</a>
+
+  </body>
+</html>
